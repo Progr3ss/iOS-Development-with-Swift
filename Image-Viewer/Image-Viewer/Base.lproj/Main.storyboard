@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wqK-5u-SWy">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="v9O-YP-dZ3">
+            <objects>
+                <viewController id="wqK-5u-SWy" customClass="ViewController" customModule="Image_Viewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m2R-ui-Ic6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="face.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="8Ku-ra-eLb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="v6o-VV-gzG" appends="YES" id="W3B-JO-oE6"/>
+                                    <outletCollection property="gestureRecognizers" destination="1a5-iG-zzk" appends="YES" id="1KI-EI-WG8"/>
+                                    <outletCollection property="gestureRecognizers" destination="pMa-w1-xHb" appends="YES" id="pVd-oc-w9u"/>
+                                    <outletCollection property="gestureRecognizers" destination="qUK-fr-HT0" appends="YES" id="Rug-kO-F54"/>
+                                    <outletCollection property="gestureRecognizers" destination="xdu-c2-72K" appends="YES" id="74M-8n-NpG"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="8Ku-ra-eLb" firstAttribute="leading" secondItem="m2R-ui-Ic6" secondAttribute="leading" id="8cA-tK-JpC"/>
+                            <constraint firstItem="8Ku-ra-eLb" firstAttribute="top" secondItem="m2R-ui-Ic6" secondAttribute="top" id="C2V-KG-g0v"/>
+                            <constraint firstItem="8Ku-ra-eLb" firstAttribute="trailing" secondItem="m2R-ui-Ic6" secondAttribute="trailing" id="m5C-Wp-KhB"/>
+                            <constraint firstItem="8Ku-ra-eLb" firstAttribute="bottom" secondItem="m2R-ui-Ic6" secondAttribute="bottom" id="wcX-tb-0ON"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ya9-gP-fQT"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="8Ku-ra-eLb" id="vgv-cE-y5T"/>
+                        <outlet property="panGesture" destination="v6o-VV-gzG" id="ZVW-iV-xhP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DMq-dA-Ydd" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="v6o-VV-gzG">
+                    <connections>
+                        <action selector="handelPan:" destination="wqK-5u-SWy" id="ElB-6L-UmP"/>
+                        <outlet property="delegate" destination="wqK-5u-SWy" id="Yxl-8b-HOm"/>
+                    </connections>
+                </panGestureRecognizer>
+                <pinchGestureRecognizer id="1a5-iG-zzk">
+                    <connections>
+                        <action selector="handelPinch:" destination="wqK-5u-SWy" id="ccc-HP-j0R"/>
+                        <outlet property="delegate" destination="wqK-5u-SWy" id="hIF-0J-6ai"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <rotationGestureRecognizer id="pMa-w1-xHb">
+                    <connections>
+                        <action selector="handelRotation:" destination="wqK-5u-SWy" id="tMd-bd-tRb"/>
+                        <outlet property="delegate" destination="wqK-5u-SWy" id="HZd-fd-gqD"/>
+                    </connections>
+                </rotationGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="qUK-fr-HT0">
+                    <connections>
+                        <outlet property="delegate" destination="wqK-5u-SWy" id="z4E-Ti-o1L"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="xdu-c2-72K">
+                    <connections>
+                        <outlet property="delegate" destination="wqK-5u-SWy" id="SZ1-pK-cPL"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="299" y="429"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="face.jpeg" width="318" height="159"/>
+    </resources>
+</document>
