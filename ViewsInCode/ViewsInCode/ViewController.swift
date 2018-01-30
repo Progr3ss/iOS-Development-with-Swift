@@ -27,6 +27,29 @@ class ViewController: UIViewController {
         label.font = label.font.withSize(40)
         label.sizeToFit()
         view.addSubview(label)
+        
+        
+//        let constraints:[NSLayoutConstraint] = [
+//            //red view
+//            redView.topAnchor.constraint(equalTo: view.topAnchor),
+//            redView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+//            redView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+//            redView.heightAnchor.constraint(equalTo: view.heightAnchor,
+//                                            multiplier: 0.5),
+//            //label
+//            label.topAnchor.constraint(equalTo: redView.bottomAnchor, constant: 8),
+//            label.leadingAnchor.constraint(equalTo:
+//                view.layoutMarginsGuide.leadingAnchor)
+//        ]
+//        redView.translatesAutoresizingMaskIntoConstraints = false
+//        label.translatesAutoresizingMaskIntoConstraints = false
+//        NSLayoutConstraint.activate(constraints)
+        
+        redView.autoresizingMask = [.flexibleHeight, .flexibleWidth,
+                                    .flexibleBottomMargin]
+        label.autoresizingMask = [.flexibleTopMargin, .flexibleBottomMargin,
+                                  .flexibleRightMargin]
+        
     }
 
     override func didReceiveMemoryWarning() {
